@@ -1,12 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css"; // apply bootstrap for styling
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from "./pages/about";
 import HomePage from "./pages/home";
-import Login from "./pages/login";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <HomePage />,
+	},
+	{
+		path: "/about",
+		element: <About />,
 	},
 	{
 		path: "/login",
