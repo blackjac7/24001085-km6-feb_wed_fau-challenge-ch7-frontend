@@ -3,11 +3,6 @@ body {
     color: #4a4a4a;
 }
 
-@font-face {
-    font-family: "BlackStreet";
-    src: url("../../assets/font/BlackStreet.ttf") format("truetype");
-}
-
 @keyframes bounce {
     0% {
         transform: translateY(0);
