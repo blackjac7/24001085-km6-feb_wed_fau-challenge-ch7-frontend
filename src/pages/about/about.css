@@ -1,0 +1,41 @@
+.first-text {
+    color: #9465ef;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+li > a {
+    color: #9465ef;
+    text-decoration: none;
+}
+
+li > a:hover {
+    color: #7e4e9e;
+}
+
+li > a:active {
+    color: #5d3871;
+}
+
+li::before {
+    content: "•";
+    color: #9465ef;
+    margin-right: 0.5rem;
+}
+
+.about-logo-text {
+    border-bottom: 1.5px solid #9465ef;
+    text-shadow: 0px 30px 0px #fff;
+}
+
+.about-logo-text:hover {
+    border: none;
+    color: #9465ef;
+    cursor: pointer;
+}
