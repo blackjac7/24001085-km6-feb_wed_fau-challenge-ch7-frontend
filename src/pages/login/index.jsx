@@ -1,6 +1,7 @@
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import LoginComponent from "../../components/Login";
 
 const Login = () => {
 	return (
@@ -9,7 +10,7 @@ const Login = () => {
 				<Card>
 					<Card.Header>Login</Card.Header>
 					<Card.Body>
-						<div>Login page</div>
+						<LoginComponent />
 					</Card.Body>
 				</Card>
 			</Col>
