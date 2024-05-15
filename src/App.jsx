@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"; // apply bootstrap for styling
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./pages/about";
-import HomePage from "./pages/home";
+import Register from "./pages/register";
+import Login from "./pages/login";
 
 const router = createBrowserRouter([
 	{
@@ -9,8 +10,16 @@ const router = createBrowserRouter([
 		element: <HomePage />,
 	},
 	{
+		path: "/profile",
+		element: <Profile />,
+	},
+	{
 		path: "/about",
 		element: <About />,
+	},
+	{
+		path: "/register",
+		element: <Register />,
 	},
 	{
 		path: "/login",
