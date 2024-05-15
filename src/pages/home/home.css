@@ -1,0 +1,95 @@
+*,
+body {
+    color: #4a4a4a;
+}
+
+@font-face {
+    font-family: "BlackStreet";
+    src: url("../../assets/font/BlackStreet.ttf") format("truetype");
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+    margin-right: 0;
+    margin-left: auto;
+    display: block;
+    animation: bounce 1s 3;
+}
+
+@media (max-width: 575px) {
+    #logo {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.text-logo {
+    font-family: "BlackStreet";
+    font-weight: normal;
+    font-size: 3rem;
+    color: #9465ef;
+}
+
+.text-logo::after {
+    content: "|";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.text-highlight {
+    font-weight: bold;
+    color: #9465ef;
+}
+
+.text-highlight-link {
+    font-weight: bold;
+    color: #9465ef;
+}
+
+.text-highlight-link:hover {
+    color: #7e4e9e;
+}
+
+.text-highlight-link:active {
+    color: #5d3871;
+}
+
+.limited-width {
+    max-width: 500px;
+}
+
+p > .text-logo:hover {
+    color: #7e4e9e;
+}
+
+p > .text-logo:active {
+    color: #5d3871;
+}
+
+#heading-2-home {
+    width: 80%;
+}
