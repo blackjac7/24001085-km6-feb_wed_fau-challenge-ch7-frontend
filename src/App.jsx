@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css"; // apply bootstrap for styling
+import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./pages/about";
 import HomePage from "./pages/home";
