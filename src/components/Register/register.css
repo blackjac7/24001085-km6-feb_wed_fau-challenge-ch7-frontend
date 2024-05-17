@@ -1,9 +1,48 @@
-a {
+.register-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+.form-text {
+    font-size: 0.9em;
+}
+
+.register-form {
+    max-width: 600px; /* Adjusted max-width */
+    margin: 50px auto; /* Adjusted margin */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.register-form .text-center a {
     color: #9465ef;
     text-decoration: none;
 }
 
-a:hover {
+.register-form .text-center a:hover {
     color: #7e4e9e; /* Darker shade for hover effect */
     text-decoration: underline; /* Optional: underline on hover */
+}
+
+.small {
+  font-size: 0.7em; /* Adjust the font size as needed */
 }
