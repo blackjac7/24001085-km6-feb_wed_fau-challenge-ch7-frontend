@@ -1,0 +1,24 @@
+.login-container {
+	max-width: 400px;
+	margin: 50px auto;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: #ffffff;
+}
+
+.login-header {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 1.5em;
+	color: #333;
+}
+
+.btn-full-width {
+	width: 100%;
+}
+
+.form-text {
+	font-size: 0.9em;
+}

@@ -22,3 +22,11 @@
 .btn-full-width {
 	width: 100%;
 }
+
+.btn-full-width:hover {
+	background-color: #7e4e9e; /* Darker shade for hover effect */
+}
+
+.button-full-width:active {
+	background-color: #5d3871 !important;
+}
