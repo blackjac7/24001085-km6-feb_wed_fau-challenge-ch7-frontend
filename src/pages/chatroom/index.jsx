@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Container, Image, InputGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonComponent from "../../components/Button";
-import NavbarComponent from "../../components/Navbar";
 import { createMessage, getMessages } from "../../redux/actions/message";
 import "./chatroom.css";
 
@@ -37,32 +36,36 @@ const ChatRoom = () => {
     }, [dispatch]);
 
     return (
-        <Container>
-            <NavbarComponent/>
-            <h1 className="mt-3 h1-chatroom">Chat Room</h1>
-            {/* get all messages */}
-            {messagesGlobal &&
-                messagesGlobal.map((message, index) => (
-                    <div key={index} className="mb-4">
-                        <div className="message-user">
-                            <Image
-                                src={message.User.photo}
-                                alt="User"
-                                roundedCircle
-                                className="user-photo"
-                            />
-                            {message.User.name}
-                        </div>
-                        <div className="message-bubble">
-                            <p className="message">{message.message_content}</p>
-                            <p className="message-time">
-                                {messageTime(message.createdAt)}
-                            </p>
-                        </div>
-                    </div>
-                ))}
+        <Container>            
+            <h1 className="mt-1 h1-chatroom">Chat Room</h1>
 
-            <Row className="">
+            <Container style={{ paddingBottom: "100px" }}>
+                {/* get all messages */}
+                {messagesGlobal &&
+                    messagesGlobal.map((message, index) => (
+                        <div key={index} className="mb-4">
+                            <div className="message-user">
+                                <Image
+                                    src={message.User.photo}
+                                    alt="User"
+                                    roundedCircle
+                                    className="user-photo"
+                                />
+                                {message.User.name}
+                            </div>
+                            <div className="message-bubble">
+                                <p className="message">
+                                    {message.message_content}
+                                </p>
+                                <p className="message-time">
+                                    {messageTime(message.createdAt)}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+            </Container>
+
+            <Row>
                 {/* send message */}
                 <InputGroup
                     className="mb-3"

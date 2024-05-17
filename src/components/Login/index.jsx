@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ButtonComponent from "../../components/Button";
 import GoogleLogin from "../../components/GoogleLogin";
 import { login } from "../../redux/actions/auth";
@@ -57,6 +57,11 @@ function Login() {
                 className="google-login-button"
                 text={"Login with Google"}
             />
+            <div className="text-center mt-3">
+                <span>Don't have an account? </span>
+                <Link to="/register">Register</Link>
+            </div>
+            
         </Form>
     );
 }

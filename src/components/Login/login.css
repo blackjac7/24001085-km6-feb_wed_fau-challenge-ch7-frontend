@@ -32,3 +32,13 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
 }
+
+.login-form .text-center a {
+    color: #9465ef;
+    text-decoration: none;
+}
+
+.login-form .text-center a:hover {
+    color: #7e4e9e; /* Darker shade for hover effect */
+    text-decoration: underline; /* Optional: underline on hover */
+}

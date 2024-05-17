@@ -13,6 +13,7 @@ import Login from "./pages/login";
 import Profile from "./pages/profile";
 import Register from "./pages/register";
 import ChatRoom from "./pages/chatroom";
+import NavbarComponent from "./components/Navbar";
 import Protected from "./components/Protected";
 import NonProtected from "./components/NonProtected";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
         path: "/",
         element: (
             <NonProtected>
+                <NavbarComponent />
                 <Container className="mt-5">
                     <HomePage />
                 </Container>
@@ -32,6 +34,7 @@ const router = createBrowserRouter([
         path: "/profile",
         element: (
             <Protected>
+                <NavbarComponent />
                 <Container className="mt-5">
                     <Profile />
                 </Container>
@@ -42,6 +45,7 @@ const router = createBrowserRouter([
         path: "/about",
         element: (
             <NonProtected>
+                <NavbarComponent />
                 <Container className="mt-5">
                     <About />
                 </Container>
@@ -52,6 +56,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: (
             <NonProtected>
+                <NavbarComponent />
                 <Container className="mt-5">
                     <Register />
                 </Container>
@@ -62,6 +67,7 @@ const router = createBrowserRouter([
         path: "/login",
         element: (
             <NonProtected>
+                <NavbarComponent />
                 <Container className="mt-5">
                     <Login />
                 </Container>
@@ -72,6 +78,7 @@ const router = createBrowserRouter([
         path: "/chatroom",
         element: (
             <Protected>
+                <NavbarComponent />
                 <Container className="mt-5">
                     <ChatRoom />
                 </Container>

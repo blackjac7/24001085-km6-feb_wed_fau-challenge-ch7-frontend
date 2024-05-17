@@ -1,0 +1,9 @@
+a {
+    color: #9465ef;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #7e4e9e; /* Darker shade for hover effect */
+    text-decoration: underline; /* Optional: underline on hover */
+}
