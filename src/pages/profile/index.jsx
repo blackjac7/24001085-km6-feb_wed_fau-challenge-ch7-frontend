@@ -1,12 +1,14 @@
-import { Col, Container, Row, Image, Form } from "react-bootstrap";
-import photo from "../../assets/undraw_pic_profile_re_7g2h.svg";
+import { Col, Container, Form, Image, Row } from "react-bootstrap";
 import bird from "../../assets/brand-logo-4.png";
 import personal from "../../assets/undraw_icons_wdp4.svg";
+import photo from "../../assets/undraw_pic_profile_re_7g2h.svg";
+import NavbarComponent from "../../components/Navbar";
 import "./profile.css";
 
 const Profile = () => {
     return (
         <Container>
+            <NavbarComponent />
             <Row className="justify-content-center mt-5">
                 <Col md="6" className="text-center">
                     <Form>
