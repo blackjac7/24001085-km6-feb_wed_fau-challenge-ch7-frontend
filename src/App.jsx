@@ -14,6 +14,7 @@ import Profile from "./pages/profile";
 import Register from "./pages/register";
 import ChatRoom from "./pages/chatroom";
 import NavbarComponent from "./components/Navbar";
+import EditProfile from "./pages/edit-profile";
 import Protected from "./components/Protected";
 import NonProtected from "./components/NonProtected";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -37,6 +38,17 @@ const router = createBrowserRouter([
                 <NavbarComponent />
                 <Container className="mt-5">
                     <Profile />
+                </Container>
+            </Protected>
+        ),
+    },
+    {
+        path: "/edit-profile",
+        element: (
+            <Protected>
+                <NavbarComponent />
+                <Container className="mt-5">
+                    <EditProfile />
                 </Container>
             </Protected>
         ),
