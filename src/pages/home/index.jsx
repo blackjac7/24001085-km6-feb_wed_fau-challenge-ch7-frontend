@@ -4,6 +4,7 @@ import logo from "../../assets/salingchat-logo.png";
 import hero from "../../assets/undraw_group_chat_re_frmo.svg";
 import bird from "../../assets/undraw_quick_chat_re_bit5.svg";
 import ButtonComponent from "../../components/Button";
+import NavbarComponent from "../../components/Navbar";
 import "./home.css";
 
 export const HomePage = () => {
@@ -22,6 +23,7 @@ export const HomePage = () => {
 
 	return (
 		<Container>
+			<NavbarComponent />
 			<Row className="justify-content-center mt-5">
 				<Col sm="4" md="4">
 					<Image id="logo" src={logo} alt="SalingChat" fluid />
@@ -58,7 +60,7 @@ export const HomePage = () => {
 
 					<p>
 						Already have an account?{" "}
-						<a href="#" className="text-highlight-link">
+						<a href="/login" className="text-highlight-link">
 							Login
 						</a>
 					</p>
