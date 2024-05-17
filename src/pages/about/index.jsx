@@ -1,6 +1,6 @@
-import { Col, Container, Row, Image } from "react-bootstrap";
-import loveEmote from "../../assets/image-5.png";
+import { Col, Container, Image, Row } from "react-bootstrap";
 import bubbleHi from "../../assets/bubble-hi.png";
+import loveEmote from "../../assets/image-5.png";
 import teamSpirit from "../../assets/undraw_team_spirit_re_yl1v.svg";
 import "./about.css";
 

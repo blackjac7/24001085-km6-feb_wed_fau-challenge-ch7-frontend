@@ -2,6 +2,8 @@ name: Vercel Preview Deployment
 env:
     VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
     VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    VITE_BACKEND_API: ${{ secrets.VITE_BACKEND_API }}
+    VITE_GOOGLE_CLIENT_ID: ${{ secrets.VITE_GOOGLE_CLIENT_ID }}
 
 on:
     push:

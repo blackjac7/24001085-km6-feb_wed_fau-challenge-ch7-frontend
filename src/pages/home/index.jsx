@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Col, Container, Image, Row } from "react-bootstrap";
 import logo from "../../assets/salingchat-logo.png";
 import hero from "../../assets/undraw_group_chat_re_frmo.svg";
 import bird from "../../assets/undraw_quick_chat_re_bit5.svg";
-import "./home.css";
 import ButtonComponent from "../../components/Button";
+import "./home.css";
 
 export const HomePage = () => {
     const fullText = "SalingChat";
@@ -56,13 +57,18 @@ export const HomePage = () => {
                         <span style={{ fontWeight: "bold" }}>connect</span>{" "}
                         you!!
                     </p>
-                    <ButtonComponent text="Get Started" type="button-gs" />
+                    <Link to="/register">
+                        <ButtonComponent
+                            text="Register"
+                            className="button-gs"
+                        />
+                    </Link>
 
                     <p>
                         Already have an account?{" "}
-                        <a href="#" className="text-highlight-link">
+                        <Link to="/login" className="text-highlight-link">
                             Login
-                        </a>
+                        </Link>
                     </p>
                     <Image
                         className="mt-3 ps-5"

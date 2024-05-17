@@ -1,0 +1,24 @@
+/* .navbar-bottom-shadow {
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+} */
+
+.navbar-logo {
+    width: 40px; /* Adjust the width to your desired size */
+    height: auto; /* Maintain the aspect ratio */
+}
+.logout-nav-button {
+    padding: 10px 15px !important;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.logout-nav-button:hover {
+    background-color: #dc3545 !important;
+    padding: 10px 15px !important;
+    border-radius: 10px !important;
+    color: white !important;
+}

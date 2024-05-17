@@ -18,3 +18,61 @@
 .button-gs:active {
     background-color: #5d3871 !important;
 }
+
+.btn-full-width {
+    width: 100%;
+}
+
+.btn-full-width:hover {
+    background-color: #7e4e9e; /* Darker shade for hover effect */
+}
+
+.button-full-width:active {
+    background-color: #5d3871 !important;
+}
+
+.login-nav-button {
+    background-color: #9465ef;
+    border: 1px solid #9465ef;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-nav-button:hover {
+    background-color: #7e4e9e;
+    border: 1px solid #7e4e9e;
+}
+
+.login-nav-button:active {
+    background-color: #5d3871 !important;
+    border: 1px solid #5d3871 !important;
+}
+
+.register-nav-button {
+    background-color: white;
+    border: 1px solid #9465ef;
+    color: #9465ef;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-nav-button:hover {
+    background-color: white;
+    color: #7e4e9e;
+    border: 1px solid #7e4e9e;
+}
+
+.register-nav-button:active {
+    background-color: white !important;
+    color: #5d3871 !important;
+    border: 1px solid #5d3871 !important;
+}
