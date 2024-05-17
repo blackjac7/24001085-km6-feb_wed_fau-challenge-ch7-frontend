@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/salingchat-logo.png";
-import "./navbar.css"; // Make sure this path is correct
+import { getProfile, logout } from "../../redux/actions/auth";
+import "./navbar.css";
+
 
 const NavbarComponent = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const { user, token } = useSelector((state) => state.auth);
+
+    useEffect(() => {
+      dispatch(getProfile(null, null, null));
+    }, [dispatch, token]);
+
 	return (
 		<Navbar bg="white" expand="lg" className="navbar-bottom-shadow">
 			<Container>
