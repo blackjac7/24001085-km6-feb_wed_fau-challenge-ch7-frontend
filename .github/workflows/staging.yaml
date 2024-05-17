@@ -4,6 +4,7 @@ env:
     VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
     VITE_BACKEND_API: ${{ secrets.VITE_BACKEND_API }}
     VITE_GOOGLE_CLIENT_ID: ${{ secrets.VITE_GOOGLE_CLIENT_ID }}
+    VITE_WEBSOCKET_API: ${{ secrets.VITE_WEBSOCKET_API }}
 
 on:
     push:
