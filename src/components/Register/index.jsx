@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { register } from "../../redux/actions/auth";
 import Form from "react-bootstrap/Form";
-import ButtonComponent from "../../components/Button";
-import "./register.css";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import ButtonComponent from "../../components/Button";
+import { register } from "../../redux/actions/auth";
+import "./register.css";
 
 function Register() {
   const navigate = useNavigate();
@@ -103,6 +103,7 @@ function Register() {
       </Form.Group>
 
       <ButtonComponent text="Register" type="submit" className="button-gs" />
+
     </Form>
   );
 }

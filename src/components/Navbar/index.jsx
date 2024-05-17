@@ -1,12 +1,11 @@
+import React, { useEffect } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import logo from "../../assets/salingchat-logo.png";
-import "./navbar.css"; // Make sure this path is correct
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../../assets/salingchat-logo.png";
 import { getProfile, logout } from "../../redux/actions/auth";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import ButtonComponent from "../Button";
+import "./navbar.css";
 
 const NavbarComponent = () => {
     const navigate = useNavigate();

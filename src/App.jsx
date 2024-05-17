@@ -16,6 +16,7 @@ import ChatRoom from "./pages/chatroom";
 import NavbarComponent from "./components/Navbar";
 import Protected from "./components/Protected";
 import NonProtected from "./components/NonProtected";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const router = createBrowserRouter([
     {
@@ -89,10 +90,13 @@ const router = createBrowserRouter([
 function App() {
     return (
         <Provider store={store}>
-            <RouterProvider router={router} />;
-            <ToastContainer theme="colored" />
+            <GoogleOAuthProvider
+                clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}
+            >
+                <RouterProvider router={router} />
+                <ToastContainer theme="colored" />
+            </GoogleOAuthProvider>
         </Provider>
     );
 }
-
 export default App;

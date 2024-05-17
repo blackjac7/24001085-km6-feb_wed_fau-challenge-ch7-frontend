@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Container, Image, InputGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { getMessages, createMessage } from "../../redux/actions/message";
-import { Container, InputGroup, Row, Image } from "react-bootstrap";
 import ButtonComponent from "../../components/Button";
+import { createMessage, getMessages } from "../../redux/actions/message";
 import "./chatroom.css";
 
 const ChatRoom = () => {
@@ -36,7 +36,7 @@ const ChatRoom = () => {
     }, [dispatch]);
 
     return (
-        <Container>
+        <Container>            
             <h1 className="mt-1 h1-chatroom">Chat Room</h1>
 
             <Container style={{ paddingBottom: "100px" }}>

@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { login } from "../../redux/actions/auth";
 import Form from "react-bootstrap/Form";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import ButtonComponent from "../../components/Button";
-import "./login.css"; // Make sure this path is correct
+import GoogleLogin from "../../components/GoogleLogin";
+import { login } from "../../redux/actions/auth";
+import "./login.css";
 
 function Login() {
     const navigate = useNavigate();
@@ -15,12 +16,11 @@ function Login() {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-
         dispatch(login(navigate, email, password));
     };
 
     return (
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={onSubmit} className="login-form">
             <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Email address *</Form.Label>
                 <Form.Control
@@ -51,6 +51,17 @@ function Login() {
                 type="submit"
                 className="button-gs btn-full-width"
             />
+
+            <GoogleLogin
+                useOneTap
+                className="google-login-button"
+                text={"Login with Google"}
+            />
+            <div className="text-center mt-3">
+                <span>Don't have an account? </span>
+                <Link to="/register">Register</Link>
+            </div>
+            
         </Form>
     );
 }
