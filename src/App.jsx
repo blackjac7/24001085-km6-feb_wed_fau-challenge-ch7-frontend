@@ -1,23 +1,23 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import { ToastContainer } from "react-toastify";
 import { Provider } from "react-redux";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import store from "./redux/store";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import NavbarComponent from "./components/Navbar";
+import NonProtected from "./components/NonProtected";
+import Protected from "./components/Protected";
 import About from "./pages/about";
+import ChatRoom from "./pages/chatroom";
+import EditProfile from "./pages/edit-profile";
 import HomePage from "./pages/home";
 import Login from "./pages/login";
 import Profile from "./pages/profile";
 import Register from "./pages/register";
-import ChatRoom from "./pages/chatroom";
-import NavbarComponent from "./components/Navbar";
-import EditProfile from "./pages/edit-profile";
-import Protected from "./components/Protected";
-import NonProtected from "./components/NonProtected";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const router = createBrowserRouter([
     {
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
         element: (
             <NonProtected>
                 <NavbarComponent />
-                <Container className="mt-5">
+                <Container className="">
                     <Register />
                 </Container>
             </NonProtected>
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
         element: (
             <NonProtected>
                 <NavbarComponent />
-                <Container className="mt-5">
+                <Container className="">
                     <Login />
                 </Container>
             </NonProtected>
@@ -91,7 +91,7 @@ const router = createBrowserRouter([
         element: (
             <Protected>
                 <NavbarComponent />
-                <Container className="mt-5">
+                <Container className="">
                     <ChatRoom />
                 </Container>
             </Protected>
