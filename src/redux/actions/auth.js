@@ -50,7 +50,6 @@ export const loginWithGoogle = (navigate, accessToken) => async (dispatch) => {
 
     try {
         const response = await axios.request(config);
-        console.log("masuk", response.data);
         // get and save the token to local storage
         const { data } = response.data;
         const { token, user } = data;
