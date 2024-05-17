@@ -1,18 +1,19 @@
 .message-bubble {
     background-color: #f0f0f0;
-    border-radius: 5px;
+    border-radius: 7px;
     margin: 5px;
     padding: 10px;
     position: relative;
     display: inline-block;
     clear: both;
+    left: 52.5px;
 }
 
 .message-bubble::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 25px;
     width: 0;
     height: 0;
     border: 20px solid transparent;
@@ -22,6 +23,7 @@
     margin-left: -10px;
     margin-top: -20px;
 }
+
 .message {
     margin: 0;
     padding: 0;
@@ -39,14 +41,17 @@
     font-weight: bold;
     color: #9465ef;
     margin: 0;
-    margin-bottom: 5vh;
+    margin-bottom: 1vh;
     padding: 0;
 }
 
 .input-chatroom {
-    margin: 4px 10px;
+    margin: 4px 0px;
     width: 80%;
     border-color: #4a4a4a;
+    background-color: white;
+    border-radius: 7px; /* Add border-radius */
+    padding-left: 1.5%;
 }
 
 .input-chatroom:focus {
@@ -59,4 +64,16 @@
     height: 50px;
     border-radius: 50%;
     margin: 10px;
+}
+
+.input-container {
+    background-color: white;
+    max-width: 100%;
+    height: 10%;
+    /* padding-top: 1%; */
+    border-top: #f0f0f0;
+    bottom: 0%;
+    position: fixed;
+    margin-bottom: 0%;
+    justify-content:stretch;
 }

@@ -1,7 +1,7 @@
 .register-container {
     max-width: 1000px;
-    margin: 50px auto;
-    padding: 20px;
+    margin: auto 35px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -24,8 +24,8 @@
 }
 
 .register-form {
-    max-width: 600px; /* Adjusted max-width */
-    margin: 50px auto; /* Adjusted margin */
+    max-width: 800px; /* Adjusted max-width */
+    margin: auto 35px; /* Adjusted margin */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -45,4 +45,6 @@
 
 .small {
   font-size: 0.7em; /* Adjust the font size as needed */
+  margin: 0%;
+  padding:0%;
 }

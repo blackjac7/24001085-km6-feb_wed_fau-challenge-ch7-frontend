@@ -87,7 +87,7 @@ function Register() {
             />
           </Form.Group>
 
-          <Form.Group className="mb-4" controlId="confirmPassword">
+          <Form.Group className="mb-0" controlId="confirmPassword">
             <Form.Label>Confirm Password *</Form.Label>
             <Form.Control
               type="password"
@@ -96,6 +96,9 @@ function Register() {
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
+            <Form.Text className="text-muted small">
+              Please enter the same password as the one above.
+            </Form.Text>
           </Form.Group>
 
           <Form.Group controlId="photo" className="mb-3">
@@ -105,14 +108,13 @@ function Register() {
               onChange={(e) => setPhoto(e.target.files[0])}
             />
           </Form.Group>
-
-          </Col>
-        </Row>
-          <ButtonComponent
-            text="Register"
-            type="submit"
-            className="button-gs btn-full-width"
-          />
+        </Col>
+      </Row>
+      <ButtonComponent
+        text="Register"
+        type="submit"
+        className="button-gs btn-full-width"
+      />
 
       <div className="text-center mt-3">
         <span>Already have an account? </span>
