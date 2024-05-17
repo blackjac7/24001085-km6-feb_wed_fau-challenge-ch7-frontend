@@ -50,10 +50,10 @@ const EditProfile = () => {
 
     useEffect(() => {
         if (user) {
-            setName(user.name);
-            setEmail(user.email);
-            setPassword(user.password);
-            setGender(user.gender);
+            setName(user?.name || "");
+            setEmail(user?.email || "");
+            setPassword(user?.password || "");
+            setGender(user?.gender || "");
         }
     }, [user]);
 
@@ -106,7 +106,6 @@ const EditProfile = () => {
                     <Form.Group className="mb-3" controlId="gender">
                         <Form.Label>Gender</Form.Label>
                         <Form.Select
-                            defaultValue={gender}
                             value={gender}
                             onChange={(e) => setGender(e.target.value)}
                             required
