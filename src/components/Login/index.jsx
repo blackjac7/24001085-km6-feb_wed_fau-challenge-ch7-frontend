@@ -1,44 +1,58 @@
-import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/actions/auth";
 import Form from "react-bootstrap/Form";
 import ButtonComponent from "../../components/Button";
 import "./login.css"; // Make sure this path is correct
 
 function Login() {
-	return (
-		<div className="login-container">
-			<h2 className="login-header">Login</h2>
-			<Form onSubmit={""}>
-				<Form.Group className="mb-3" controlId="email">
-					<Form.Label>Email address *</Form.Label>
-					<Form.Control
-						type="email"
-						placeholder="Enter your email"
-						onChange={""}
-						required
-					/>
-					<Form.Text className="text-muted form-text">
-						We will never share your email with anyone else.
-					</Form.Text>
-				</Form.Group>
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-				<Form.Group className="mb-3" controlId="password">
-					<Form.Label>Password *</Form.Label>
-					<Form.Control
-						type="password"
-						placeholder="Enter your password"
-						onChange={""}
-						required
-					/>
-				</Form.Group>
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-				<ButtonComponent
-					text="Login"
-					type="button-gs"
-					className="btn-full-width"
-				/>
-			</Form>
-		</div>
-	);
+    const onSubmit = async (e) => {
+        e.preventDefault();
+
+        dispatch(login(navigate, email, password));
+    };
+
+    return (
+        <Form onSubmit={onSubmit}>
+            <Form.Group className="mb-3" controlId="email">
+                <Form.Label>Email address *</Form.Label>
+                <Form.Control
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+                <Form.Text className="text-muted">
+                    We will never share your email with anyone else.
+                </Form.Text>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="password">
+                <Form.Label>Password *</Form.Label>
+                <Form.Control
+                    type="password"
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+            </Form.Group>
+
+            <ButtonComponent
+                text="Login"
+                type="submit"
+                className="button-gs btn-full-width"
+            />
+        </Form>
+    );
 }
 
 export default Login;
