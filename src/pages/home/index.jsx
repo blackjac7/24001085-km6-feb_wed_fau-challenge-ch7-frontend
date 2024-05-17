@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import logo from "../../assets/salingchat-logo.png";
 import hero from "../../assets/undraw_group_chat_re_frmo.svg";
 import bird from "../../assets/undraw_quick_chat_re_bit5.svg";
 import ButtonComponent from "../../components/Button";
+import NavbarComponent from "../../components/Navbar";
 import "./home.css";
 
 export const HomePage = () => {
@@ -23,6 +23,7 @@ export const HomePage = () => {
 
     return (
         <Container>
+            <NavbarComponent />
             <Row className="justify-content-center mt-5">
                 <Col sm="4" md="4">
                     <Image id="logo" src={logo} alt="SalingChat" fluid />
@@ -57,18 +58,13 @@ export const HomePage = () => {
                         <span style={{ fontWeight: "bold" }}>connect</span>{" "}
                         you!!
                     </p>
-                    <Link to="/register">
-                        <ButtonComponent
-                            text="Get Started"
-                            className="button-gs"
-                        />
-                    </Link>
+                    <ButtonComponent text="Get Started" className="button-gs" />
 
                     <p>
                         Already have an account?{" "}
-                        <Link to="/login" className="text-highlight-link">
+                        <a href="/login" className="text-highlight-link">
                             Login
-                        </Link>
+                        </a>
                     </p>
                     <Image
                         className="mt-3 ps-5"

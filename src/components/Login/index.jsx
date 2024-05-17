@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../redux/actions/auth";
 import Form from "react-bootstrap/Form";
 import ButtonComponent from "../../components/Button";
+import "./login.css"; // Make sure this path is correct
 
 function Login() {
     const navigate = useNavigate();
