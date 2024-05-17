@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import { Container, Image, InputGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { io } from "socket.io-client";
 import ButtonComponent from "../../components/Button";
 import { createMessage, getMessages } from "../../redux/actions/message";
 import "./chatroom.css";
 
+const socket = io(import.meta.env.VITE_WEBSOCKET_API);
+
 const ChatRoom = () => {
-    const [message, setMessage] = useState("");
     const dispatch = useDispatch();
+
+    const [message, setMessage] = useState("");
+    const [typing, setTyping] = useState(false);
 
     const messagesGlobal = useSelector((state) => state.message.messages);
     const userGlobal = useSelector((state) => state.auth.user);
@@ -21,8 +26,7 @@ const ChatRoom = () => {
     };
 
     const sendMessage = (message) => {
-        // Send the message to the server or any other destination
-        // and update the messages state
+        setMessage("");
         dispatch(
             createMessage({
                 sender_id: userGlobal.id,
@@ -35,8 +39,23 @@ const ChatRoom = () => {
         dispatch(getMessages());
     }, [dispatch]);
 
+    useEffect(() => {
+        socket.on("connect", () => {});
+
+        socket.on("message", () => {
+            dispatch(getMessages());
+        });
+
+        socket.on("ontyping", (username) => {
+            setTyping(username + " is typing...");
+            setTimeout(() => {
+                setTyping(false);
+            }, 1000);
+        });
+    }, [dispatch]);
+
     return (
-        <Container>            
+        <Container>
             <h1 className="mt-1 h1-chatroom">Chat Room</h1>
 
             <Container style={{ paddingBottom: "100px" }}>
@@ -66,6 +85,18 @@ const ChatRoom = () => {
             </Container>
 
             <Row>
+                {typing && (
+                    <p
+                        className="typing-text mb-3 ms-2"
+                        style={{
+                            position: "fixed",
+                            bottom: "12%",
+                            width: "100%",
+                        }}
+                    >
+                        {typing}
+                    </p>
+                )}
                 {/* send message */}
                 <InputGroup
                     className="mb-3"
@@ -75,7 +106,10 @@ const ChatRoom = () => {
                         className="input-chatroom"
                         type="text"
                         value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                        onChange={(e) => {
+                            setMessage(e.target.value);
+                            socket.emit("typing", userGlobal.name);
+                        }}
                         onKeyDown={(e) => {
                             if (e.key === "Enter") {
                                 sendMessage(message);
