@@ -1,9 +1,11 @@
 import { Col, Container, Form, Image, Row, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import bird from "../../assets/brand-logo-4.png";
 import personal from "../../assets/undraw_icons_wdp4.svg";
 import photoDefault from "../../assets/undraw_pic_profile_re_7g2h.svg";
+import ButtonComponent from "../../components/Button";
 import "./profile.css";
 
 const Profile = () => {
@@ -105,6 +107,14 @@ const Profile = () => {
                     </Form>
                 </Col>
             </Row>
+            <div className="d-flex justify-content-center mt-3">
+                <Link to="/edit-profile">
+                    <ButtonComponent
+                        text="Edit Profile"
+                        className="button-gs"
+                    />
+                </Link>
+            </div>
             <Row className="justify-content-center mt-5">
                 <Image style={{ maxWidth: "500px" }} src={personal} fluid />
             </Row>

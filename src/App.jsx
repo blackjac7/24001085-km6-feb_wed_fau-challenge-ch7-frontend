@@ -13,6 +13,7 @@ import NonProtected from "./components/NonProtected";
 import Protected from "./components/Protected";
 import About from "./pages/about";
 import ChatRoom from "./pages/chatroom";
+import EditProfile from "./pages/edit-profile";
 import HomePage from "./pages/home";
 import Login from "./pages/login";
 import Profile from "./pages/profile";
@@ -37,6 +38,17 @@ const router = createBrowserRouter([
                 <NavbarComponent />
                 <Container className="mt-5">
                     <Profile />
+                </Container>
+            </Protected>
+        ),
+    },
+    {
+        path: "/edit-profile",
+        element: (
+            <Protected>
+                <NavbarComponent />
+                <Container className="mt-5">
+                    <EditProfile />
                 </Container>
             </Protected>
         ),

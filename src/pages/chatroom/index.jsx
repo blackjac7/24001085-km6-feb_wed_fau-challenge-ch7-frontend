@@ -1,25 +1,61 @@
 import { useEffect, useRef, useState } from "react";
 import { Col, Container, Image, InputGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { io } from "socket.io-client";
 import ButtonComponent from "../../components/Button";
 import { createMessage, getMessages } from "../../redux/actions/message";
 import "./chatroom.css";
 
+const socket = io(import.meta.env.VITE_WEBSOCKET_API);
+
 const ChatRoom = () => {
-  const [message, setMessage] = useState("");
-  const dispatch = useDispatch();
+
+    const dispatch = useDispatch();
+
+    const [message, setMessage] = useState("");
+    const [typing, setTyping] = useState(false);
+
+    const messagesGlobal = useSelector((state) => state.message.messages);
+    const userGlobal = useSelector((state) => state.auth.user);
+
+    const messageTime = (date) => {
+      const messageDate = new Date(date);
+      return messageDate.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+    };
+
+    const sendMessage = (message) => {
+      setMessage("");
+      dispatch(
+        createMessage({
+          sender_id: userGlobal.id,
+          message_content: message,
+        })
+      );
+    };
+
+    useEffect(() => {
+      dispatch(getMessages());
+    }, [dispatch]);
+
+    useEffect(() => {
+      socket.on("connect", () => {});
+
+      socket.on("message", () => {
+        dispatch(getMessages());
+      });
+
+      socket.on("ontyping", (username) => {
+        setTyping(username + " is typing...");
+        setTimeout(() => {
+          setTyping(false);
+        }, 1000);
+      });
+    }, [dispatch]);
+
   const messagesEndRef = useRef(null);
-
-  const messagesGlobal = useSelector((state) => state.message.messages);
-  const userGlobal = useSelector((state) => state.auth.user);
-
-  const messageTime = (date) => {
-    const messageDate = new Date(date);
-    return messageDate.toLocaleTimeString("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  };
 
   const scrollToBottom = () => {
     if (messagesEndRef.current) {
@@ -27,18 +63,6 @@ const ChatRoom = () => {
         behavior: "smooth",
       });
     }
-  };
-
-  const sendMessage = (message) => {
-    if (!message.trim()) return; // Don't send empty messages
-    dispatch(
-      createMessage({
-        sender_id: userGlobal.id,
-        message_content: message,
-      })
-    );
-    setMessage(""); // Clear the input field after sending message
-    scrollToBottom();
   };
 
   useEffect(() => {
@@ -110,6 +134,19 @@ const ChatRoom = () => {
 
       <Container className="input-container">
         <Row className="input-row">
+          {typing && (
+            <p
+              className="typing-text mb-3 ms-2"
+              style={{
+                position: "relative",
+                bottom: "35%",
+                width: "100%",
+              }}
+            >
+              {typing}
+            </p>
+          )}
+
           {/* send message */}
           <Col>
             <InputGroup>
@@ -117,7 +154,10 @@ const ChatRoom = () => {
                 className="input-chatroom"
                 type="text"
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                  socket.emit("typing", userGlobal.name);
+                }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     sendMessage(message);
