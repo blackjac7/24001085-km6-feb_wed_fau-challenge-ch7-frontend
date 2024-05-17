@@ -1,5 +1,6 @@
 import Form from "react-bootstrap/Form";
 import ButtonComponent from "../../components/Button";
+import { Link } from "react-router-dom";
 
 function Register() {
     return (
@@ -56,7 +57,9 @@ function Register() {
                 <Form.Control type="file" onChange={""} />
             </Form.Group>
 
-            <ButtonComponent text="Register" className="button-gs" />
+            <Link to="/reigster" className="text-center">
+                <ButtonComponent text="Register" className="button-gs" />
+            </Link>
         </Form>
     );
 }

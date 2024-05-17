@@ -17,7 +17,6 @@ export const getMessages = () => async (dispatch, getState) => {
         const response = await axios.request(config);
 
         const { data } = response.data;
-        console.log(data);
 
         dispatch(setMessages(data));
     } catch (error) {
