@@ -9,8 +9,10 @@
   background-color: white;
   color: #9465ef;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .google-login-button:hover {
   background-color: #f1f1f1;
+  color: #7e4e9e;
 }
