@@ -1,20 +1,24 @@
 .button-gs {
-    background-color: #9465ef;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+	background-color: #9465ef;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
 }
 
 .button-gs:hover {
-    background-color: #7e4e9e;
+	background-color: #7e4e9e;
 }
 
 .button-gs:active {
-    background-color: #5d3871 !important;
+	background-color: #5d3871 !important;
+}
+
+.btn-full-width {
+	width: 100%;
 }
