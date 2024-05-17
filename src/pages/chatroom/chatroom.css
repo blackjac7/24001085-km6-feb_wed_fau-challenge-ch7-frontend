@@ -1,0 +1,62 @@
+.message-bubble {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+    clear: both;
+}
+
+.message-bubble::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom-color: #f0f0f0;
+    border-top: 0;
+    border-left: 0;
+    margin-left: -10px;
+    margin-top: -20px;
+}
+.message {
+    margin: 0;
+    padding: 0;
+}
+
+.message-time {
+    font-size: 0.8em;
+    color: #4a4a4a;
+    margin: 0;
+    padding: 0;
+}
+
+.h1-chatroom {
+    font-size: 2em;
+    font-weight: bold;
+    color: #9465ef;
+    margin: 0;
+    margin-bottom: 5vh;
+    padding: 0;
+}
+
+.input-chatroom {
+    margin: 4px 10px;
+    width: 80%;
+    border-color: #4a4a4a;
+}
+
+.input-chatroom:focus {
+    border-color: #9465ef;
+    outline: none;
+}
+
+.user-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
